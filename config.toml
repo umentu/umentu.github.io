@@ -9,7 +9,7 @@ enableRobotsTXT = true
 # ブログのタイトル
 title = "UmentuLab TechBlog"
 
-theme = "mainroad"
+theme = "anatole"
 paginate = 20
 
 # 自己紹介
