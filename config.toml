@@ -1,5 +1,5 @@
 # 公開するページのURL
-baseURL = "https://weblog.github.io"
+baseURL = "https://weblog.umentulab.com"
 
 languageCode = "ja"
 DefaultContentLanguage = "ja"
