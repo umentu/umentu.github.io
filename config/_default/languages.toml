@@ -1,0 +1,13 @@
+[ja]
+title = "UmentuLab Techblog"
+description = ""
+weight = 1
+LanguageName = "JA"
+contentDir = "content/japanese"
+
+[en]
+title = "UmentuLab Techblog"
+description = ""
+contentDir = "content/english" 
+weight = 1
+LanguageName = "EN"
