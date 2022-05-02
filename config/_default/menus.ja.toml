@@ -1,0 +1,29 @@
+  [[main]]
+  name = "ホーム"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[main]]
+  name = "投稿"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[main]]
+  name = "ポートフォリオ"
+  weight = 300
+  identifier = "portfolio"
+  url = "/portfolio/"
+
+  [[main]]
+  name = "UmentuLabについて"
+  weight = 400
+  identifier = "about"
+  url = "/about/"
+
+  [[footer]]
+  name = "imprint"
+  weight = 1
+  identifier = "imprint"
+  url = "/imprint/"
