@@ -19,13 +19,13 @@ doNotLoadAnimations = false
 #googleFonts = ["Indie+Flower", "Roboto:ital,wght@0,100;0,400;0,700;1,400"]
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-singleDateFormat = "2/1/2006"
-indexDateFormat = "2/1/2006"
-listDateFormat = "2/1/2006"
+singleDateFormat = "2006/2/1"
+indexDateFormat = "2006/2/1"
+listDateFormat = "2006/2/1"
 # Commento Comments
 # CommentoURL = "https://commento.example.com/js/commento.js"
 # Read More links for truncated summaries
-# readMore = true
+readMore = true
 # postSectionName = "blog"
 # relatedPosts = true
 # numberOfRelatedPosts = 3
@@ -49,7 +49,7 @@ reversepagetitle = true # When set to 'true', the Window Title will be reversed 
 
 ## Math settings
 [math]
-enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 
 ## Social links
@@ -62,14 +62,14 @@ url = "https://de.linkedin.com/"
 [[socialIcons]]
 icon = "fab fa-github"
 title = "GitHub"
-url = "https://github.com/lxndrblz/anatole/"
+url = "https://github.com/umentu/"
 
 [[socialIcons]]
 icon = "fab fa-instagram"
 title = "instagram"
-url = "https://www.instagram.com/"
+url = "https://www.instagram.com/umentulab/"
 
 [[socialIcons]]
-icon = "fas fa-envelope"
-title = "e-mail"
-url = "mailto:mail@example.com"
+icon = "fab fa-twitter"
+title = "twitter"
+url = "https://twitter.com/umekichinano"

@@ -3,11 +3,11 @@ title = "UmentuLab Techblog"
 description = ""
 weight = 1
 LanguageName = "JA"
-contentDir = "content/japanese"
+contentDir = "content/ja"
 
 [en]
 title = "UmentuLab Techblog"
 description = ""
-contentDir = "content/english" 
+contentDir = "content/en" 
 weight = 1
 LanguageName = "EN"
