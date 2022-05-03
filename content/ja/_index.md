@@ -1,5 +1,5 @@
 +++
-author = "Umentu Lab(Shitnaro Tachibana)"
+author = "umentu"
 +++
 
 <!--
