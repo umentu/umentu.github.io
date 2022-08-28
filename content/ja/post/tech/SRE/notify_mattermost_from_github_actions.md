@@ -12,8 +12,8 @@ tags =["introduction"]
 2. GitHubのリポジトリの`Settings->Secrets->Actions`を開き、`MATTERMOST_NOTION`という名前で1.で作成したWebhook URLを登録する。
 
 3. `PROJECT_DIR/.github/workflows`配下に任意の名前のYAMLファイルを設置して、以下を記載する。ブランチ名などは適宜設定する。
-
-```
+ 
+```yaml
 on:
   push:
     branches:
