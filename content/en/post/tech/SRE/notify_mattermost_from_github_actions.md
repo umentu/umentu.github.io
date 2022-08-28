@@ -40,4 +40,4 @@ jobs:
         MATTERMOST_WEBHOOK_URL: ${{ secrets.gps }}
 ```
 
-1. YAMLファイルをCommitしてPushしたら、通知が開始される。
+4. Once the YAML file is Commit and Push is done, notification is initiated.
