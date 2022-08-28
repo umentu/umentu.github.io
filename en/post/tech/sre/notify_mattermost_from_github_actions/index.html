@@ -36,7 +36,7 @@ UmentuLab(Shintaro Tachibana)
       Learn how to notify MATTERMOST of commit messages from GitHub Actions.
 
 
-    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/notify_mattermost_from_github_actions\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-08-29T00:00:00.00Z","datePublished":"2022-08-29T00:00:00.00Z","dateModified":"2022-08-29T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/notify_mattermost_from_github_actions\/","wordCount":"103","genre":[],"keywords":["introduction"]}</script>
+    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/notify_mattermost_from_github_actions\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-08-29T00:00:00.00Z","datePublished":"2022-08-29T00:00:00.00Z","dateModified":"2022-08-29T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/notify_mattermost_from_github_actions\/","wordCount":"115","genre":[],"keywords":["introduction"]}</script>
 </head>
 <body class="body theme--light">
 <div class=wrapper>
@@ -190,8 +190,8 @@ jobs:
     - uses: mattermost/action-mattermost-notify@master
       env:
         MATTERMOST_WEBHOOK_URL: ${{ secrets.gps }}
-</code></pre></div><ol>
-<li>YAMLファイルをCommitしてPushしたら、通知が開始される。</li>
+</code></pre></div><ol start=4>
+<li>Once the YAML file is Commit and Push is done, notification is initiated.</li>
 </ol>
 </div>
 <div class=post__footer>
