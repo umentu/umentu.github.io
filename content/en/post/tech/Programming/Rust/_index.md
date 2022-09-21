@@ -1,4 +1,4 @@
 +++
-title = "Tech"
+title = "Rust"
 author = "umentu"
 +++

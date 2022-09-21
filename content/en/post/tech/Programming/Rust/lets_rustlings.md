@@ -123,8 +123,8 @@ Ubuntu: `Ctrl + Shift + p`
 
 でコマンドパレットを開き、`Create New Terminal in Editor Area`で新たなターミナルを開くと使いやすい。
 
-{{ $image := .Resources.GetMatch "lets_rustlings01.png" }}
 
+{{< figure src="lets_rustlings01.png" alt="画像1" >}}
 
 
 ## 感想
