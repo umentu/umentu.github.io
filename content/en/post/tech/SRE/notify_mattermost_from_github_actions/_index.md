@@ -4,7 +4,7 @@ author = "umentu"
 title = "How to notify MATTERMOST of commit contents from GitHub Actions."
 date = "2022-08-29"
 description = "Learn how to notify MATTERMOST of commit messages from GitHub Actions."
-tags =["introduction"]
+tags =["tech", "SRE"]
 +++
 1. Get Webhook URL of Mattermost from `Integrations -> Incoming Webhooks`.The Channel to be notified can be any one.
 2. The Webhook URL created in step 1 shold be registered in the `GitHub's repository->Settings->Secrets->Actions` under the name `MATTERMOST_NOTION`.
