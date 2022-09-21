@@ -123,7 +123,7 @@ Ubuntu: `Ctrl + Shift + p`
 
 でコマンドパレットを開き、`Create New Terminal in Editor Area`で新たなターミナルを開くと使いやすい。
 
-![](lets_rustlings01.png)
+{{ $image := .Resources.GetMatch "lets_rustlings01.png" }}
 
 
 
