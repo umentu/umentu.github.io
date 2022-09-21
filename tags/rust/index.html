@@ -1,12 +1,12 @@
 <!doctype html><html dir=ltr lang=ja data-theme class=html><head>
 <title>
-GitHub ActionsからMattermostにCommit内容を通知する方法 |
+rust |
 UmentuLab(Shintaro Tachibana)
 </title>
 <meta charset=utf-8><meta name=generator content="Hugo 0.86.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name=author content="UmentuLab(Shintaro Tachibana)">
 <meta name=description content="
-      GitHubのCommit内容をMattermostに通知する方法を紹介
+      
 
 
     ">
@@ -19,24 +19,18 @@ UmentuLab(Shintaro Tachibana)
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
-<link rel=canonical href=https://weblog.umentulab.com/post/tech/sre/notify_mattermost_from_github_actions/>
+<link rel=canonical href=https://weblog.umentulab.com/tags/rust/>
+<link rel=alternate type=application/rss+xml href=/tags/rust/index.xml title="UmentuLab Techblog">
 <script type=text/javascript src=/js/anatole-header.min.46e6a54097480084f8f52c20ca1aa7425b4fad17029a887fd4017b12e311a72d.js integrity="sha256-RualQJdIAIT49SwgyhqnQltPrRcCmoh/1AF7EuMRpy0=" crossorigin=anonymous></script>
 <script type=text/javascript src=/js/anatole-theme-switcher.min.5557c8ff5617a01067ac258fd70b9b992506e379317b0da51e5e0f6e018b408a.js integrity="sha256-VVfI/1YXoBBnrCWP1wubmSUG43kxew2lHl4PbgGLQIo=" crossorigin=anonymous></script>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://weblog.umentulab.com/img/ogp.png">
-<meta name=twitter:title content="GitHub ActionsからMattermostにCommit内容を通知する方法">
-<meta name=twitter:description content="GitHubのCommit内容をMattermostに通知する方法を紹介">
-<meta property="og:title" content="GitHub ActionsからMattermostにCommit内容を通知する方法">
-<meta property="og:description" content="GitHubのCommit内容をMattermostに通知する方法を紹介">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://weblog.umentulab.com/post/tech/sre/notify_mattermost_from_github_actions/"><meta property="og:image" content="https://weblog.umentulab.com/img/ogp.png"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2022-08-29T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-08-29T00:00:00+00:00"><meta property="og:site_name" content="UmentuLab Techblog">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"GitHub ActionsからMattermostにCommit内容を通知する方法","headline":"GitHub ActionsからMattermostにCommit内容を通知する方法","alternativeHeadline":"","description":"
-      GitHubのCommit内容をMattermostに通知する方法を紹介
-
-
-    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/post\/tech\/sre\/notify_mattermost_from_github_actions\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-08-29T00:00:00.00Z","datePublished":"2022-08-29T00:00:00.00Z","dateModified":"2022-08-29T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/post\/tech\/sre\/notify_mattermost_from_github_actions\/","wordCount":"25","genre":[],"keywords":["tech"]}</script>
+<meta name=twitter:title content="rust">
+<meta name=twitter:description content>
+<meta property="og:title" content="rust">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://weblog.umentulab.com/tags/rust/"><meta property="og:image" content="https://weblog.umentulab.com/img/ogp.png"><meta property="og:site_name" content="UmentuLab Techblog">
 </head>
 <body class="body theme--light">
 <div class=wrapper>
@@ -117,19 +111,6 @@ imprint
 </ul>
 <ul class="nav__list nav__list--end">
 <li class=nav__list-item>
-<div class=optionswitch>
-<input class=optionswitch__picker type=checkbox id=languagepicker hidden>
-<label class=optionswitch__label for=languagepicker>JA <i class="fa fa-angle-down" aria-hidden=true></i></label>
-<div class=optionswitch__triangle></div>
-<ul class=optionswitch__list>
-<li class=optionswitch__list-item>
-<a href=/en/post/tech/sre/notify_mattermost_from_github_actions/ title=EN><span aria-label=EN>EN</span>
-</a>
-</li>
-</ul>
-</div>
-</li>
-<li class=nav__list-item>
 <div class=themeswitch>
 <a title="Switch Theme">
 <i class="fas fa-adjust fa-fw" aria-hidden=true></i>
@@ -140,66 +121,17 @@ imprint
 </nav>
 </div>
 </header>
-<div class="post
+<div class="archive
 animated fadeInDown">
-<div class=post__content>
-<h1>GitHub ActionsからMattermostにCommit内容を通知する方法</h1>
-<ul class=post__meta>
-<li class=post__meta-item>
-<em class="fas fa-calendar-day post__meta-icon"></em>
-<span class=post__meta-text>
-2022/8/29
-</span>
-</li>
-<li class=post__meta-item>
-<em class="fas fa-stopwatch post__meta-icon"></em>
-<span class=post__meta-text>読む時間 1 分間</span>
+<div class=archive__heading>2022</div>
+<ul class=archive__list>
+<li class=archive__list-item>
+<a class=archive__list-title href=/post/tech/programming/lets_rustlings/ title=Rustlingsを始める方法>Rustlingsを始める方法</a>
+<div class=archive__list-date>
+2022/9/21
+</div>
 </li>
 </ul>
-<ol>
-<li>
-<p>Mattermostの統合機能->内向きのウェブフックからWebhook URLを取得する。通知したいチャンネルを指定する。</p>
-</li>
-<li>
-<p>GitHubのリポジトリの<code>Settings->Secrets->Actions</code>を開き、<code>MATTERMOST_NOTION</code>という名前で1.で作成したWebhook URLを登録する。</p>
-</li>
-<li>
-<p><code>PROJECT_DIR/.github/workflows</code>配下に任意の名前のYAMLファイルを設置して、以下を記載する。ブランチ名などは適宜設定する。</p>
-</li>
-</ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>on</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span>- <span class=s2>&#34;develop&#34;</span><span class=w>
-</span><span class=w>      </span>- <span class=s2>&#34;main&#34;</span><span class=w>
-</span><span class=w>  </span><span class=nt>pull_request</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span>- <span class=s2>&#34;develop&#34;</span><span class=w>
-</span><span class=w>      </span>- <span class=s2>&#34;main&#34;</span><span class=w>
-</span><span class=w>    </span><span class=nt>types</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span>- <span class=s2>&#34;closed&#34;</span><span class=w>
-</span><span class=w>
-</span><span class=w>    
-</span><span class=w>
-</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
-</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
-</span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Create the Mattermost Message</span><span class=w>
-</span><span class=w>      </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
-</span><span class=sd>        message=`git log -1`
-</span><span class=sd>        echo &#34;{\&#34;text\&#34;:\&#34;${message}\&#34;}&#34; &gt; mattermost.json</span><span class=w>        
-</span><span class=w>    </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>mattermost/action-mattermost-notify@master</span><span class=w>
-</span><span class=w>      </span><span class=nt>env</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>MATTERMOST_WEBHOOK_URL</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.gps }}</span><span class=w>
-</span></code></pre></div><ol start=4>
-<li>YAMLファイルをCommitしてPushしたら、通知が開始される。</li>
-</ol>
-</div>
-<div class=post__footer>
-<span><a class=tag href=/tags/tech/>tech</a></span>
-</div>
 </div>
 </main>
 </div><footer class="footer footer__base">
