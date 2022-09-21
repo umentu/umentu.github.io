@@ -1,0 +1,243 @@
+<!doctype html><html dir=ltr lang=ja data-theme class=html><head>
+<title>
+Rustlingsを始める方法 |
+UmentuLab(Shintaro Tachibana)
+</title>
+<meta charset=utf-8><meta name=generator content="Hugo 0.86.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=author content="UmentuLab(Shintaro Tachibana)">
+<meta name=description content="
+      asdfからRust環境を構築してrustlingsを始める方法を紹介
+
+
+    ">
+<link rel=stylesheet href=/scss/main.min.b2e0cb07595e3519ab1193bb421914e06c0e26b0cc561fef23b3c6131d4d2ffa.css integrity="sha256-suDLB1leNRmrEZO7QhkU4GwOJrDMVh/vI7PGEx1NL/o=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/fontawesome/css/fontawesome.min.b1c4e6a10bdbab01f33fff9d78816ee68cf9a9a731f07668afd546a79924cb80.css integrity="sha256-scTmoQvbqwHzP/+deIFu5oz5qacx8HZor9VGp5kky4A=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/fontawesome/css/solid.min.423dee17c62f55fa733a4ee13e00d523dfce88cc4f4ab4549a24ba36bd9de681.css integrity="sha256-Qj3uF8YvVfpzOk7hPgDVI9/OiMxPSrRUmiS6Nr2d5oE=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/fontawesome/css/brands.min.b7d54133b27e5b4de15245b8e143de3e8ed2d674c706137274cedc9953f31917.css integrity="sha256-t9VBM7J+W03hUkW44UPePo7S1nTHBhNydM7cmVPzGRc=" crossorigin=anonymous type=text/css>
+<link rel="shortcut icon" href=/favicons/favicon.ico type=image/x-icon>
+<link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
+<link rel=canonical href=https://weblog.umentulab.com/post/tech/programming/rust/lets_rustlings/>
+<script type=text/javascript src=/js/anatole-header.min.46e6a54097480084f8f52c20ca1aa7425b4fad17029a887fd4017b12e311a72d.js integrity="sha256-RualQJdIAIT49SwgyhqnQltPrRcCmoh/1AF7EuMRpy0=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.5557c8ff5617a01067ac258fd70b9b992506e379317b0da51e5e0f6e018b408a.js integrity="sha256-VVfI/1YXoBBnrCWP1wubmSUG43kxew2lHl4PbgGLQIo=" crossorigin=anonymous></script>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://weblog.umentulab.com/img/ogp.png">
+<meta name=twitter:title content="Rustlingsを始める方法">
+<meta name=twitter:description content="asdfからRust環境を構築してrustlingsを始める方法を紹介">
+<meta property="og:title" content="Rustlingsを始める方法">
+<meta property="og:description" content="asdfからRust環境を構築してrustlingsを始める方法を紹介">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://weblog.umentulab.com/post/tech/programming/rust/lets_rustlings/"><meta property="og:image" content="https://weblog.umentulab.com/img/ogp.png"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2022-09-21T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-09-21T00:00:00+00:00"><meta property="og:site_name" content="UmentuLab Techblog">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"Rustlingsを始める方法","headline":"Rustlingsを始める方法","alternativeHeadline":"","description":"
+      asdfからRust環境を構築してrustlingsを始める方法を紹介
+
+
+    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/post\/tech\/programming\/rust\/lets_rustlings\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-09-21T00:00:00.00Z","datePublished":"2022-09-21T00:00:00.00Z","dateModified":"2022-09-21T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/post\/tech\/programming\/rust\/lets_rustlings\/","wordCount":"140","genre":[],"keywords":["tech","rust"]}</script>
+</head>
+<body class="body theme--light">
+<div class=wrapper>
+<aside class=wrapper__sidebar><div class="sidebar
+animated fadeInDown">
+<div class=sidebar__content>
+<div class=sidebar__introduction>
+<img class=sidebar__introduction-profileimage src=/img/avatar.png alt="profile picture">
+<div class=sidebar__introduction-title>
+<a href=/>UmentuLab Techblog</a>
+</div>
+<div class=sidebar__introduction-description>
+<p></p>
+</div>
+</div>
+<ul class=sidebar__list>
+<li class=sidebar__list-item>
+<a href=https://de.linkedin.com/ target=_blank rel=noopener aria-label=Linkedin title=Linkedin>
+<i class="fab fa-linkedin fa-2x" aria-hidden=true></i>
+</a>
+</li>
+<li class=sidebar__list-item>
+<a href=https://github.com/umentu/ target=_blank rel=noopener aria-label=GitHub title=GitHub>
+<i class="fab fa-github fa-2x" aria-hidden=true></i>
+</a>
+</li>
+<li class=sidebar__list-item>
+<a href=https://www.instagram.com/umentulab/ target=_blank rel=noopener aria-label=instagram title=instagram>
+<i class="fab fa-instagram fa-2x" aria-hidden=true></i>
+</a>
+</li>
+<li class=sidebar__list-item>
+<a href=https://twitter.com/umekichinano target=_blank rel=noopener aria-label=twitter title=twitter>
+<i class="fab fa-twitter fa-2x" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</div><footer class="footer footer__sidebar">
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+UmentuLab(Shintaro Tachibana)
+2022
+</li>
+<li class=footer__item>
+<a class=link href=/imprint/ title>
+imprint
+</a>
+</li>
+</ul>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.fae9ac8895995fe91958b3954be11e96025824a04770726a3531e119ddd2d576.js integrity="sha256-+umsiJWZX+kZWLOVS+EelgJYJKBHcHJqNTHhGd3S1XY=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css integrity=sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js integrity=sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js integrity=sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DLL4ECXN5T"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-DLL4ECXN5T',{anonymize_ip:!1})}</script>
+</div>
+</aside>
+<main class=wrapper__main>
+<header class=header><div class="animated fadeInDown">
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true class=navbar-burger__line></span>
+<span aria-hidden=true class=navbar-burger__line></span>
+<span aria-hidden=true class=navbar-burger__line></span>
+</a>
+<nav class=nav>
+<ul class=nav__list id=navMenu>
+<li class=nav__list-item>
+<a href=/ title>ホーム</a>
+</li>
+<li class=nav__list-item>
+<a href=/post/ title>投稿</a>
+</li>
+<li class=nav__list-item>
+<a href=/portfolio/ title>ポートフォリオ</a>
+</li>
+<li class=nav__list-item>
+<a href=/about/ title>UmentuLabについて</a>
+</li>
+</ul>
+<ul class="nav__list nav__list--end">
+<li class=nav__list-item>
+<div class=optionswitch>
+<input class=optionswitch__picker type=checkbox id=languagepicker hidden>
+<label class=optionswitch__label for=languagepicker>JA <i class="fa fa-angle-down" aria-hidden=true></i></label>
+<div class=optionswitch__triangle></div>
+<ul class=optionswitch__list>
+<li class=optionswitch__list-item>
+<a href=/en/post/tech/programming/rust/lets_rustlings/ title=EN><span aria-label=EN>EN</span>
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=nav__list-item>
+<div class=themeswitch>
+<a title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="post
+animated fadeInDown">
+<div class=post__content>
+<h1>Rustlingsを始める方法</h1>
+<ul class=post__meta>
+<li class=post__meta-item>
+<em class="fas fa-calendar-day post__meta-icon"></em>
+<span class=post__meta-text>
+2022/9/21
+</span>
+</li>
+<li class=post__meta-item>
+<em class="fas fa-stopwatch post__meta-icon"></em>
+<span class=post__meta-text>読む時間 1 分間</span>
+</li>
+</ul>
+<p>Rustの公式の学習ツールとして「<a href=https://github.com/rust-lang/rustlings>Rustlings</a>」というものを一月前ほどに知り、非常に楽しくて
+何週かしていた。ぜひプログラミング学習的な意図としても活用してみてほしいと考え、紹介する。</p>
+<p>MacかWSLのUbuntu環境での方法を紹介する。</p>
+<h2 id=1-asdfをインストール>1. asdfをインストール</h2>
+<p><a href=https://asdf-vm.com/>asdf</a>とは、プログラミング言語やソフトウェアのバージョン管理をしてくれるソフトウェア。
+asdfを入れれば(M1/2とかでない限り)おおよその環境を構築できる。
+ただしasdfに限らずな点として、PythonにおけるSQLite3など、システム領域にインストールする必要がある場合は別途インストールが必要。</p>
+<h3 id=ubuntuでgccが入っていない場合はインストール>Ubuntuでgccが入っていない場合はインストール</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo apt install gcc
+</code></pre></div><h3 id=zshmacの場合デフォルトの場合>zsh(Macの場合デフォルト)の場合</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>git clone https://github.com/asdf-vm/asdf.git ~/.asdf 
+. <span class=nv>$HOME</span>/.asdf/asdf.sh &gt;&gt; <span class=nv>$HOME</span>/.zshrc
+<span class=nb>exec</span> <span class=nv>$SHELL</span> -l
+</code></pre></div><h3 id=bashubuntuのデフォルトの場合>bash(Ubuntuのデフォルト)の場合</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>git clone https://github.com/asdf-vm/asdf.git ~/.asdf 
+. <span class=nv>$HOME</span>/.asdf/asdf.sh &gt;&gt; <span class=nv>$HOME</span>/.bash_profile
+<span class=nb>exec</span> <span class=nv>$SHELL</span> -l
+</code></pre></div><h3 id=確認>確認</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>asdf --version
+<span class=c1># v0.10.2</span>
+</code></pre></div><h2 id=2-rust-をインストール>2. Rust をインストール</h2>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>asdf plugin add rust
+asdf install rust latest
+asdf global rust latest
+</code></pre></div><h3 id=確認-1>確認</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>rustc --version
+
+<span class=c1># rust 1.63.0</span>
+</code></pre></div><h2 id=rustlingsをインストール>rustlingsをインストール</h2>
+<h3 id=rustup-をインストール>rustup をインストール</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>curl --proto <span class=s1>&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class=p>|</span> sh
+</code></pre></div><h3 id=rustlings-をインストール>rustlings をインストール</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh <span class=p>|</span> bash
+</code></pre></div><h3 id=rustlingsのexerciseをローカルにclone>rustlingsのexerciseをローカルにclone</h3>
+<p><strong>VS Codeでやることを想定</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=nb>cd</span> <span class=nv>$WORKSPACE</span> <span class=c1># $WORKSPACEは任意のディレクトリ</span>
+git clone https://github.com/rust-lang/rustlings
+<span class=nb>cd</span> rustlings
+code .
+</code></pre></div><h2 id=rustlingsの使い方>rustlingsの使い方</h2>
+<p>VS Codeのターミナルで実行</p>
+<h4 id=起動>起動</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>rustlings watch
+</code></pre></div><p>起動するとエラーファイルとエラー箇所が表示されるので、それらを修正していく。
+修正して保存したらエラーが解消されたかを自動でチェックしてくれる。
+間違っていた場合は再度修正、完了したら</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>// I AM NOT DONE
+</code></pre></div><p>を削除すると次のファイルのエラーが表示される。これをひたすら繰り返す。</p>
+<h4 id=ヒント>ヒント</h4>
+<p>わからないときは</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>rustlings hint intro1
+</code></pre></div><p>のように実行すると、ヒントが表示される。</p>
+<p>ただしターミナルは<code>rustlings watch</code> が起動しているので、VS Codeの画面を分割して</p>
+<p>Mac: <code>Cmd + Shift + p</code>
+Ubuntu: <code>Ctrl + Shift + p</code></p>
+<p>でコマンドパレットを開き、<code>Create New Terminal in Editor Area</code>で新たなターミナルを開くと使いやすい。</p>
+<figure><img src=lets_rustlings01.png alt=画像1>
+</figure>
+<h2 id=感想>感想</h2>
+<p>世の中、こういうツールがでまわっているんだから、オンラインスクールなんて言う情報商材にお金をかけなくてもプログラミング言語は勉強できるのに。</p>
+</div>
+<div class=post__footer>
+<span><a class=tag href=/tags/tech/>tech</a><a class=tag href=/tags/rust/>rust</a></span>
+</div>
+</div>
+</main>
+</div><footer class="footer footer__base">
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+UmentuLab(Shintaro Tachibana)
+2022
+</li>
+<li class=footer__item>
+<a class=link href=/imprint/ title>
+imprint
+</a>
+</li>
+</ul>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.fae9ac8895995fe91958b3954be11e96025824a04770726a3531e119ddd2d576.js integrity="sha256-+umsiJWZX+kZWLOVS+EelgJYJKBHcHJqNTHhGd3S1XY=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css integrity=sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js integrity=sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js integrity=sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DLL4ECXN5T"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-DLL4ECXN5T',{anonymize_ip:!1})}</script>
+</body>
+</html>
