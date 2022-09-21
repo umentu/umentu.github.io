@@ -36,7 +36,7 @@ UmentuLab(Shintaro Tachibana)
       Learn how to notify MATTERMOST of commit messages from GitHub Actions.
 
 
-    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/mattermost\/notify_mattermost_from_github_actions\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-08-29T00:00:00.00Z","datePublished":"2022-08-29T00:00:00.00Z","dateModified":"2022-08-29T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/mattermost\/notify_mattermost_from_github_actions\/","wordCount":"115","genre":[],"keywords":["tech","SRE"]}</script>
+    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/mattermost\/notify_mattermost_from_github_actions\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-08-29T00:00:00.00Z","datePublished":"2022-08-29T00:00:00.00Z","dateModified":"2022-08-29T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/sre\/mattermost\/notify_mattermost_from_github_actions\/","wordCount":"87","genre":[],"keywords":["tech","SRE"]}</script>
 </head>
 <body class="body theme--light">
 <div class=wrapper>
@@ -164,33 +164,33 @@ animated fadeInDown">
 <li>The Webhook URL created in step 1 shold be registered in the <code>GitHub's repository->Settings->Secrets->Actions</code> under the name <code>MATTERMOST_NOTION</code>.</li>
 <li>Create YAML file under <code>PROJECT_DIR/.github/workflows</code> with any name and write the following contents. Branch name are set as appropriate.</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>on:
-  push:x
-    branches:
-      - &#34;develop&#34;
-      - &#34;main&#34;
-  pull_request:
-    branches:
-      - &#34;develop&#34;
-      - &#34;main&#34;
-    types:
-      - &#34;closed&#34;
-
-    
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Create the Mattermost Message
-      run: |
-        message=`git log -1`
-        echo &#34;{\&#34;text\&#34;:\&#34;${message}\&#34;}&#34; &gt; mattermost.json
-    - uses: mattermost/action-mattermost-notify@master
-      env:
-        MATTERMOST_WEBHOOK_URL: ${{ secrets.gps }}
-</code></pre></div><ol start=4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=l>push:x</span><span class=w>
+</span><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=s2>&#34;develop&#34;</span><span class=w>
+</span><span class=w>      </span>- <span class=s2>&#34;main&#34;</span><span class=w>
+</span><span class=w>  </span><span class=nt>pull_request</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=s2>&#34;develop&#34;</span><span class=w>
+</span><span class=w>      </span>- <span class=s2>&#34;main&#34;</span><span class=w>
+</span><span class=w>    </span><span class=nt>types</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=s2>&#34;closed&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Create the Mattermost Message</span><span class=w>
+</span><span class=w>      </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span><span class=sd>        message=`git log -1`
+</span><span class=sd>        echo &#34;{\&#34;text\&#34;:\&#34;${message}\&#34;}&#34; &gt; mattermost.json</span><span class=w>        
+</span><span class=w>    </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>mattermost/action-mattermost-notify@master</span><span class=w>
+</span><span class=w>      </span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>MATTERMOST_WEBHOOK_URL</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.gps }}</span><span class=w>
+</span></code></pre></div><ol start=4>
 <li>Once the YAML file is Commit and Push is done, notification is initiated.</li>
 </ol>
 </div>

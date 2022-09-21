@@ -1,11 +1,12 @@
 <!doctype html><html dir=ltr lang=en data-theme class=html><head>
 <title>
+Rustlingsを始める方法 |
 UmentuLab(Shintaro Tachibana)
 </title>
 <meta charset=utf-8><meta name=generator content="Hugo 0.86.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name=author content="UmentuLab(Shintaro Tachibana)">
 <meta name=description content="
-      
+      asdfからRust環境を構築してrustlingsを始める方法を紹介
 
 
     ">
@@ -19,17 +20,23 @@ UmentuLab(Shintaro Tachibana)
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
 <link rel=canonical href=https://weblog.umentulab.com/en/post/tech/programming/rust/lets_rustlings/>
-<link rel=alternate type=application/rss+xml href=/en/post/tech/programming/rust/lets_rustlings/index.xml title="UmentuLab Techblog">
 <script type=text/javascript src=/js/anatole-header.min.46e6a54097480084f8f52c20ca1aa7425b4fad17029a887fd4017b12e311a72d.js integrity="sha256-RualQJdIAIT49SwgyhqnQltPrRcCmoh/1AF7EuMRpy0=" crossorigin=anonymous></script>
 <script type=text/javascript src=/js/anatole-theme-switcher.min.5557c8ff5617a01067ac258fd70b9b992506e379317b0da51e5e0f6e018b408a.js integrity="sha256-VVfI/1YXoBBnrCWP1wubmSUG43kxew2lHl4PbgGLQIo=" crossorigin=anonymous></script>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://weblog.umentulab.com/img/ogp.png">
-<meta name=twitter:title content>
-<meta name=twitter:description content>
-<meta property="og:title" content>
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://weblog.umentulab.com/en/post/tech/programming/rust/lets_rustlings/"><meta property="og:image" content="https://weblog.umentulab.com/img/ogp.png"><meta property="og:site_name" content="UmentuLab Techblog">
+<meta name=twitter:title content="Rustlingsを始める方法">
+<meta name=twitter:description content="asdfからRust環境を構築してrustlingsを始める方法を紹介">
+<meta property="og:title" content="Rustlingsを始める方法">
+<meta property="og:description" content="asdfからRust環境を構築してrustlingsを始める方法を紹介">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://weblog.umentulab.com/en/post/tech/programming/rust/lets_rustlings/"><meta property="og:image" content="https://weblog.umentulab.com/img/ogp.png"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2022-09-21T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-09-21T00:00:00+00:00"><meta property="og:site_name" content="UmentuLab Techblog">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"Rustlingsを始める方法","headline":"Rustlingsを始める方法","alternativeHeadline":"","description":"
+      asdfからRust環境を構築してrustlingsを始める方法を紹介
+
+
+    ","inLanguage":"ja","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/programming\/rust\/lets_rustlings\/"},"author":{"@type":"Person","name":"umentu"},"creator":{"@type":"Person","name":"umentu"},"accountablePerson":{"@type":"Person","name":"umentu"},"copyrightHolder":{"@type":"Person","name":"umentu"},"copyrightYear":"2022","dateCreated":"2022-09-21T00:00:00.00Z","datePublished":"2022-09-21T00:00:00.00Z","dateModified":"2022-09-21T00:00:00.00Z","publisher":{"@type":"Organization","name":"umentu","url":"https://weblog.umentulab.com","logo":{"@type":"ImageObject","url":"https:\/\/weblog.umentulab.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://weblog.umentulab.com/img/ogp.png"],"url":"https:\/\/weblog.umentulab.com\/en\/post\/tech\/programming\/rust\/lets_rustlings\/","wordCount":"140","genre":[],"keywords":["tech","rust"]}</script>
 </head>
 <body class="body theme--light">
 <div class=wrapper>
@@ -113,6 +120,19 @@ imprint
 </ul>
 <ul class="nav__list nav__list--end">
 <li class=nav__list-item>
+<div class=optionswitch>
+<input class=optionswitch__picker type=checkbox id=languagepicker hidden>
+<label class=optionswitch__label for=languagepicker>EN <i class="fa fa-angle-down" aria-hidden=true></i></label>
+<div class=optionswitch__triangle></div>
+<ul class=optionswitch__list>
+<li class=optionswitch__list-item>
+<a href=/post/tech/programming/rust/lets_rustlings/ title=JA><span aria-label=JA>JA</span>
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=nav__list-item>
 <div class=themeswitch>
 <a title="Switch Theme">
 <i class="fas fa-adjust fa-fw" aria-hidden=true></i>
@@ -123,8 +143,86 @@ imprint
 </nav>
 </div>
 </header>
-<div class="archive
+<div class="post
 animated fadeInDown">
+<div class=post__content>
+<h1>Rustlingsを始める方法</h1>
+<ul class=post__meta>
+<li class=post__meta-item>
+<em class="fas fa-calendar-day post__meta-icon"></em>
+<span class=post__meta-text>
+2022/9/21
+</span>
+</li>
+<li class=post__meta-item>
+<em class="fas fa-stopwatch post__meta-icon"></em>
+<span class=post__meta-text>One-minute read</span>
+</li>
+</ul>
+<p>Rustの公式の学習ツールとして「<a href=https://github.com/rust-lang/rustlings>Rustlings</a>」というものを一月前ほどに知り、非常に楽しくて
+何週かしていた。ぜひプログラミング学習的な意図としても活用してみてほしいと考え、紹介する。</p>
+<p>MacかWSLのUbuntu環境での方法を紹介する。</p>
+<h2 id=1-asdfをインストール>1. asdfをインストール</h2>
+<p><a href=https://asdf-vm.com/>asdf</a>とは、プログラミング言語やソフトウェアのバージョン管理をしてくれるソフトウェア。
+asdfを入れれば(M1/2とかでない限り)おおよその環境を構築できる。
+ただしasdfに限らずな点として、PythonにおけるSQLite3など、システム領域にインストールする必要がある場合は別途インストールが必要。</p>
+<h3 id=ubuntuでgccが入っていない場合はインストール>Ubuntuでgccが入っていない場合はインストール</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo apt install gcc
+</code></pre></div><h3 id=zshmacの場合デフォルトの場合>zsh(Macの場合デフォルト)の場合</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>git clone https://github.com/asdf-vm/asdf.git ~/.asdf 
+. <span class=nv>$HOME</span>/.asdf/asdf.sh &gt;&gt; <span class=nv>$HOME</span>/.zshrc
+<span class=nb>exec</span> <span class=nv>$SHELL</span> -l
+</code></pre></div><h3 id=bashubuntuのデフォルトの場合>bash(Ubuntuのデフォルト)の場合</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>git clone https://github.com/asdf-vm/asdf.git ~/.asdf 
+. <span class=nv>$HOME</span>/.asdf/asdf.sh &gt;&gt; <span class=nv>$HOME</span>/.bash_profile
+<span class=nb>exec</span> <span class=nv>$SHELL</span> -l
+</code></pre></div><h3 id=確認>確認</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>asdf --version
+<span class=c1># v0.10.2</span>
+</code></pre></div><h2 id=2-rust-をインストール>2. Rust をインストール</h2>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>asdf plugin add rust
+asdf install rust latest
+asdf global rust latest
+</code></pre></div><h3 id=確認-1>確認</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>rustc --version
+
+<span class=c1># rust 1.63.0</span>
+</code></pre></div><h2 id=rustlingsをインストール>rustlingsをインストール</h2>
+<h3 id=rustup-をインストール>rustup をインストール</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>curl --proto <span class=s1>&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class=p>|</span> sh
+</code></pre></div><h3 id=rustlings-をインストール>rustlings をインストール</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh <span class=p>|</span> bash
+</code></pre></div><h3 id=rustlingsのexerciseをローカルにclone>rustlingsのexerciseをローカルにclone</h3>
+<p><strong>VS Codeでやることを想定</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=nb>cd</span> <span class=nv>$WORKSPACE</span> <span class=c1># $WORKSPACEは任意のディレクトリ</span>
+git clone https://github.com/rust-lang/rustlings
+<span class=nb>cd</span> rustlings
+code .
+</code></pre></div><h2 id=rustlingsの使い方>rustlingsの使い方</h2>
+<p>VS Codeのターミナルで実行</p>
+<h4 id=起動>起動</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>rustlings watch
+</code></pre></div><p>起動するとエラーファイルとエラー箇所が表示されるので、それらを修正していく。
+修正して保存したらエラーが解消されたかを自動でチェックしてくれる。
+間違っていた場合は再度修正、完了したら</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>// I AM NOT DONE
+</code></pre></div><p>を削除すると次のファイルのエラーが表示される。これをひたすら繰り返す。</p>
+<h4 id=ヒント>ヒント</h4>
+<p>わからないときは</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>rustlings hint intro1
+</code></pre></div><p>のように実行すると、ヒントが表示される。</p>
+<p>ただしターミナルは<code>rustlings watch</code> が起動しているので、VS Codeの画面を分割して</p>
+<p>Mac: <code>Cmd + Shift + p</code>
+Ubuntu: <code>Ctrl + Shift + p</code></p>
+<p>でコマンドパレットを開き、<code>Create New Terminal in Editor Area</code>で新たなターミナルを開くと使いやすい。</p>
+<figure><img src=lets_rustlings01.png alt=画像1>
+</figure>
+<h2 id=感想>感想</h2>
+<p>世の中、こういうツールがでまわっているんだから、オンラインスクールなんて言う情報商材にお金をかけなくてもプログラミング言語は勉強できるのに。</p>
+</div>
+<div class=post__footer>
+<span><a class=tag href=/en/tags/tech/>tech</a><a class=tag href=/en/tags/rust/>rust</a></span>
+</div>
 </div>
 </main>
 </div><footer class="footer footer__base">
