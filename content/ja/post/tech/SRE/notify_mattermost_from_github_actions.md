@@ -4,7 +4,7 @@ author = "umentu"
 title = "GitHub ActionsからMattermostにCommit内容を通知する方法"
 date = "2022-08-29"
 description = "GitHubのCommit内容をMattermostに通知する方法を紹介"
-tags =["introduction"]
+tags =["tech"]
 +++
 
 1. Mattermostの統合機能->内向きのウェブフックからWebhook URLを取得する。通知したいチャンネルを指定する。
