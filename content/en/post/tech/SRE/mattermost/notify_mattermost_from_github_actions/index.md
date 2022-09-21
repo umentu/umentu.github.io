@@ -11,7 +11,7 @@ tags =["tech", "SRE"]
 3. Create YAML file under `PROJECT_DIR/.github/workflows` with any name and write the following contents. Branch name are set as appropriate.
 
 
-```
+```yaml
 on:
   push:x
     branches:
